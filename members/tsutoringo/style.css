@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+div.card {
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+    box-shadow: #00000062 1px 1px 10px ;
+}
