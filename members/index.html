@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yuki Ishii</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="canvas">
+    <div id="canvas-stars" class="canvas-stars"></div>
+    <div class="detail">
+      <h1 class="name">Yuki Ishii</h1>
+      <h2 class="job">Web Developer</h2>
+      <p class="desc">I love HTML CSS JS with React.js</p>
+    </div>
+  </div>
+</body>
+
+<script>
+  class Star {
+      constructor(x, y, z) {
+      this.x = x,
+      this.y = y,
+      this.z = z
+    }
+
+    getNodeStar = () => {
+      let min = 3;
+      let max = 6;
+      let randomAnime = Math.floor(Math.random() * (max - min) + min);      
+      let node = document.createElement('div');
+      node.style.left = this.x + 'px';
+      node.style.top = this.y + 'px';
+      node.style.width = '5px';
+      node.style.height = '5px';
+      node.style.animationDuration = randomAnime + 's';
+      node.classList.add('star');
+
+      return node;
+    }
+  }
+
+  let starNum = 100;
+  let stars = [];
+
+  let generateStars = () => {
+    let width = window.innerWidth;
+    let heigh = window.innerHeight;
+    
+    for(let i = 0; i < starNum; i++) {
+      let posx = Math.floor(Math.random() * width);
+      let posy = Math.floor(Math.random() * heigh);
+      let posz = Math.round(Math.random() * 100) / 100; 
+      let newStar = new Star(posx, posy, posz);
+      stars.push(newStar);
+    }
+  }
+
+  let showStarsOnCanvas = () => {
+    let canvas = document.getElementById('canvas-stars');
+    stars.map(star => {
+      canvas.appendChild(star.getNodeStar());
+    })
+  }
+
+  (() => {
+    generateStars();
+    showStarsOnCanvas();
+  })();
+</script>
+
+ <style>
+  *, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Ubuntu', sans-serif;
+    height: 100%;
+    width: 100%;
+  }
+
+  .canvas {
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+  }
+
+  .name { font-size: 5rem }
+  .job { font-size: 2rem;}
+  .desc { 
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .canvas-stars {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .star {
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    filter: blur(1.5px);
+    will-change: transform;
+    animation: blink infinite;
+  }
+
+  @keyframes blink {
+    0% {
+      transform: scale(.5);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(.5);
+    }
+  }  
+ </style>
+</html>
