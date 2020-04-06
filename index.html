@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <title>DISCORD まったり個人Web開発 自己紹介ページ</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
     <style>
         body {
             margin: 40px 20px;
             background: #ebf5fc;
             color: #6a9bd8;
+            font-family: "M PLUS 1p", Helvetica Neue, Helvetica, Arial, sans-serif;
         }
 
         @media screen and (min-width:768px) {
             body {
-                margin: 0 100px;
+                margin: 0 20px 0 100px;
                 display: grid;
                 grid-template-columns: 260px 1fr;
             }
@@ -35,20 +37,30 @@
         }
 
         ul.members {
-            display: flex;
-            flex-wrap: wrap;
             margin: auto;
             padding: 0;
         }
 
         ul.members>li {
-            margin: 20px;
-            display: flex;
+            margin: 20px auto;
+            list-style: none;
             justify-content: center;
             border-radius: 10px;
             padding: 30px;
             width: 240px;
             box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (min-width:768px) {
+            ul.members {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            ul.members>li {
+                display: flex;
+                margin: 20px;
+            }
         }
 
         div.member-box {
@@ -81,7 +93,7 @@
 
 <body>
     <header>
-        <h1><span>DISCORD</span><span>まったり個人</span><span>Web開発</span><span>自己紹介ページ</span></h1>
+        <h1><span>DISCORD</span> <span>まったり個人</span><span>Web開発</span> <span>自己紹介ページ</span></h1>
         <p class="copyright">©2020 各ページを作成したみんな</p>
     </header>
     <main>
