@@ -19,54 +19,111 @@
 
 <script>
   class Star {
-      constructor(x, y, z) {
+    constructor(x, y, z) {
       this.x = x,
       this.y = y,
-      this.z = z
+      this.z = z,
+      this.next = null;
+      this.duration = this.getRandomAnimeDuration();
     }
-
-    getNodeStar = () => {
+    
+    getRandomAnimeDuration() {
       let min = 3;
       let max = 6;
-      let randomAnime = Math.floor(Math.random() * (max - min) + min);      
-      let node = document.createElement('div');
-      node.style.left = this.x + 'px';
-      node.style.top = this.y + 'px';
-      node.style.width = '5px';
-      node.style.height = '5px';
-      node.style.animationDuration = randomAnime + 's';
-      node.classList.add('star');
-
-      return node;
+      let randomAnimeDureation = Math.floor(Math.random() * (max - min) + min);
+      return randomAnimeDureation
     }
   }
 
-  let starNum = 100;
-  let stars = [];
+  /**
+   * Use singly linked list data structure
+   */
+  class StarList {
+    constructor() {
+      this.head = null;
+      this.tail = null;
+      this.length = 0;
+    }
 
-  let generateStars = () => {
-    let width = window.innerWidth;
-    let heigh = window.innerHeight;
-    
-    for(let i = 0; i < starNum; i++) {
+    pushStar(x, y, z) {
+      let newStar = new Star(x, y, z);
+      if(!this.head) {
+        this.head = newStar;
+        this.tail = newStar;
+      } else {
+        this.tail.next = newStar;
+        this.tail = newStar;
+      }
+      this.length++;
+      return this;
+    }
+
+    generateStars(num) {
+      let position = null;
+      for(let i = 0; i < num; i++) {
+        position = this.generatePosition();
+        this.pushStar(position.posx, position.posy, position.posz);
+      }
+      return this;
+    }
+
+    /**
+     * target: id or classname of element where you want show stars
+     * ex. appendStarsToTarget('.className' / '#elemId');
+     */
+    appendStarsToTarget(target) {
+      // elements
+      let container = document.querySelector(target);
+      let documentFragment = document.createDocumentFragment();
+      let starElem = document.createElement('span');
+      starElem.classList.add('star');
+
+      let arr = [];
+      let current = this.head;
+      while(current) {
+        // Add dynamic style to star element from star class
+        starElem.style.cssText = ''.concat(
+          "left: " + current.x + "px;",
+          "top: " + current.y + "px;",
+          "animation-duration: " + current.duration + "s;"
+        );
+        // Go to next star
+        current = current.next;
+        console.log(current);
+        
+        // Add star element to fragment
+        let clone = starElem.cloneNode(true);
+        documentFragment.appendChild(clone);
+      }
+      container.appendChild(documentFragment);
+    }
+
+    generatePosition() {
+      // Window size
+      let width = window.innerWidth;
+      let heigh = window.innerHeight;
+      // Position
       let posx = Math.floor(Math.random() * width);
       let posy = Math.floor(Math.random() * heigh);
-      let posz = Math.round(Math.random() * 100) / 100; 
-      let newStar = new Star(posx, posy, posz);
-      stars.push(newStar);
-    }
-  }
+      let posz = Math.round(Math.random() * 100) / 100;
 
-  let showStarsOnCanvas = () => {
-    let canvas = document.getElementById('canvas-stars');
-    stars.map(star => {
-      canvas.appendChild(star.getNodeStar());
-    })
+      let position = {
+        posx: posx,
+        posy: posy,
+        posz: posz
+      }
+
+      return position;
+    }
   }
 
   (() => {
-    generateStars();
-    showStarsOnCanvas();
+    let starList = new StarList();
+    let numStars = 100; // number of stars
+    starList.generateStars(100);
+    window.requestAnimationFrame(() => {
+      starList.appendStarsToTarget('#canvas-stars');
+    });
   })();
 </script>
 
@@ -118,17 +175,31 @@
     filter: blur(1.5px);
     will-change: transform;
     animation: blink infinite;
+    -o-animation: blink infinite;
+    -moz-animation: blink infinite;
+    -webkit-animation: blink infinite;
+    width: 5px;
+    height: 5px;
   }
 
   @keyframes blink {
     0% {
-      transform: scale(.5);
+      transform: scale(.5) translateZ(0);
+      -o-transform: scale(.5) translateZ(0);
+      -moz-transform: scale(.5) translateZ(0);
+      -webkit-transform: scale(.5) translateZ(0);
     }
     50% {
-      transform: scale(1);
+      transform: scale(1) translateZ(0);
+      -o-transform: scale(1) translateZ(0);
+      -moz-transform: scale(1) translateZ(0);
+      -webkit-transform: scale(1) translateZ(0);
     }
     100% {
-      transform: scale(.5);
+      transform: scale(.5) translateZ(0);
+      -o-transform: scale(.5) translateZ(0);
+      -moz-transform: scale(.5) translateZ(0);
+      -webkit-transform: scale(.5) translateZ(0);
     }
   }  
  </style>
