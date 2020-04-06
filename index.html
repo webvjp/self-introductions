@@ -5,10 +5,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+        body {
+            margin: 40px 20px;
+            background: #ebf5fc;
+            color: #6a9bd8;
+
+        }
+
+        @media screen and (min-width:768px) {
+            body {
+                margin: 0 100px;
+                display: grid;
+                grid-template-columns: 260px 1fr;
+            }
+
+            header {
+                margin: 100px 0;
+            }
+        }
+
+        header h1>span {
+            white-space: nowrap;
+        }
+
+        p.copyright {
+            color: #aabbf8;
+            font-size: 0.9em;
+        }
+
+        ul.members {
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            padding: 0;
+        }
+
+        ul.members>li {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            padding: 30px;
+            width: 240px;
+            box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        div.member-box {
+            text-align: center;
+        }
+
+        div.member-box img.avator {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        div.member-box button.go-to-page {
+            border-width: 0;
+            width: 60px;
+            height: 60px;
+            background: #ebf5fc;
+            box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            color: #6a9bd8;
+        }
+
+        div.member-box button.go-to-page>svg {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 
 <body>
-    <a href="/members/yukke">ゆっけ</a>
+    <header>
+        <h1><span>DISCORD</span><span>まったり個人</span><span>Web開発</span><span>自己紹介ページ</span></h1>
+        <p class="copyright">©2020 各ページを作成したみんな</p>
+    </header>
+    <main>
+        <ul class="members" id="members"></ul>
+    </main>
+
+    <script>
+        const memberTemplate = memberInfo => `
+        <div class="member-box">
+            <img class="avator" src="${memberInfo.imageUrl}" alt="${memberInfo.name}" />
+            <h2>${memberInfo.name}</h2>
+            <p>since ${memberInfo.since}</p>
+            <a href="${memberInfo.pageUrl}">
+                <button class="go-to-page">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right"
+                        class="svg-inline--fa fa-arrow-right fa-w-14" role="img"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z">
+                        </path>
+                    </svg>
+                </button>
+            </a>
+        </div>`
+        const shuffle = ([...arr]) => { let m = arr.length; while (m) { const i = Math.floor(Math.random() * m--);[arr[m], arr[i]] = [arr[i], arr[m]]; } return arr; };
+        const members = document.getElementById('members')
+        fetch('members.json')
+            .then((response) => response.json())
+            .then((json) => {
+                shuffle(json).forEach(memberInfo => {
+                    const memberEl = document.createElement('li')
+                    memberEl.innerHTML = memberTemplate(memberInfo)
+                    members.appendChild(memberEl)
+                });
+            })
+    </script>
 </body>
 
 </html>
