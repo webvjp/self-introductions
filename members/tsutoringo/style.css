@@ -1,16 +1,116 @@
 * {
-    margin: 0;
+	margin: 0;
+}
+:root {
+	--text-color: #353535;
+	--green-color: #43b581;
+}
+image {
+	vertical-align: top;
 }
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+
+	background-color: #d3f7f1;
 }
 div.card {
-    border-radius: 10px;
-    padding: 10px;
-    display: inline-block;
-    box-shadow: #00000062 1px 1px 10px ;
+	border-radius: 5px;
+	padding: 15px;
+	display: inline-block;
+	box-shadow: #00000027 1px 1px 4px 1px;
+	background-color: white;
+}
+div.card .icon {
+	border-radius: 50%;
+	display: inline-block;
+}
+div.card .icon img {
+	border-radius: 50%;
+	display: inline-block;
+}
+div.card .name {
+	text-align: center;
+	color: var(--text-color);
+}
+div.card .socials {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.fab.fa-twitter {
+	color: #1DA1F2;
+}
+
+.fab.fa-discord {
+	color: #7289DA;
+}
+
+div.card .socials .icon {
+	margin: 5px;
+	cursor: pointer;
+	user-select: none;
+
+	position: relative;
+}
+.socials .icon .fab {
+	margin-right: 10px;
+	font-size: 120%;
+}
+.socials .icon a {
+	text-decoration: none;
+}
+.socials .icon .name {
+	color: var(--text-color);
+}
+.balloon {
+	position: absolute;
+	bottom: 130%;
+	width: 100%;
+	max-width: 124px;
+	padding: 3px;
+	border-radius: 2px;
+	text-align: center;
+	color: white;
+	background-color: var(--green-color);
+	display: none;
+}
+.balloon::before {
+	content: "";
+	position: absolute;
+	display: block;
+	top: 100%;
+	left: 43%;
+	background-color: none;
+	border-style: solid;
+	border-width: 7px 7px 0 7px;
+	border-color: var(--green-color) #fffFFF00 #fffFFF00 #fffFFF00;
+}
+.balloon.show {
+	display: block;
+	animation: rotation 1s ease 0s 1 alternate-reverse forwards running;
+}
+@keyframes rotation {
+	0% {
+		opacity: 0.0;
+		transform: scale(0.5,0.5);
+	}
+	5% {
+		transform: scale(1,1);
+	}
+	10% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 1;
+		transform: scale(1,1);
+	}
+	100% {
+		opacity: 0.0;
+		transform: scale(0.5,0.5);
+	}
 }
