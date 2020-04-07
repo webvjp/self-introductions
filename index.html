@@ -2,21 +2,36 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <meta name="description" content="「まったり個人Web開発」という Discord サーバーのメンバーによる自己紹介ページです。みんなで自由に作ってます\( •̀ω•́ )/">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="「まったり個人Web開発」という Discord サーバーのメンバーによる自己紹介ページです。みんなで自由に作ってます\( •̀ω•́ )/" />
+    <meta name="theme-color" content="#216dca" />
     <title>DISCORD まったり個人Web開発 自己紹介ページ</title>
-    <link rel="icon" type="shortcut icon" href="favicon.ico">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+    <link rel="icon" type="icon" href="assets/icons/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/icons/icon-180x180.png" />
+    <link rel="stylesheet" href="assets/css/normalize.min.css" />
+    <link rel="preload" as="font" href="assets/fonts/m-plus-1p-v19-japanese-regular.woff2" crossorigin />
 
     <style>
+        :root {
+            --main-bg-color: #ebf5fc;
+            --main-color: #216dca;
+            --neumorphism: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1)
+        }
+
+        @font-face {
+            font-family: "M PLUS 1p";
+            font-style: normal;
+            font-weight: 400;
+            src: local("M PLUS 1p"), local("MPLUS1p-Regular"), url("assets/fonts/m-plus-1p-v19-japanese-regular.woff2") format("woff2");
+        }
+
         body {
             margin: 40px 20px;
-            background: #ebf5fc;
-            color: #6a9bd8;
-            font-family: "M PLUS 1p", Helvetica Neue, Helvetica, Arial, sans-serif;
+            background: var(--main-bg-color);
+            color: var(--main-color);
+            font-family: "M PLUS 1p", "Osaka", Arial, sans-serif;
         }
 
         @media screen and (min-width:768px) {
@@ -36,7 +51,7 @@
         }
 
         p.copyright {
-            color: #aabbf8;
+            color: var(--main-color);
             font-size: 0.9em;
         }
 
@@ -52,7 +67,7 @@
             border-radius: 10px;
             padding: 30px;
             width: 240px;
-            box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--neumorphism);
         }
 
         @media screen and (min-width:768px) {
@@ -81,10 +96,10 @@
             border-width: 0;
             width: 60px;
             height: 60px;
-            background: #ebf5fc;
-            box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+            background: var(--main-bg-color);
+            box-shadow: var(--neumorphism);
             border-radius: 10px;
-            color: #6a9bd8;
+            color: var(--main-color);
         }
 
         div.member-box button.go-to-page>svg {
@@ -111,7 +126,7 @@
             <h2>${memberInfo.name}</h2>
             <p>since ${memberInfo.since}</p>
             <a href="${memberInfo.pageUrl}" target="_blank" rel="noopener">
-                <button class="go-to-page">
+                <button class="go-to-page" aria-label="go-to-page">
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right"
                         class="svg-inline--fa fa-arrow-right fa-w-14" role="img"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
