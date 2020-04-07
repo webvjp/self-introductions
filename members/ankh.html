@@ -31,6 +31,7 @@
             -ms-transform: translate(-50%, -50%);
             margin: 0;
             color: #fff;
+            z-index: 10;
         }
         
         a {
@@ -82,6 +83,14 @@
         dd {
             margin-bottom: 10px;
         }
+        
+        canvas {
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+            height: 40vh;
+            z-index: 5;
+        }
     </style>
 </head>
 
@@ -99,6 +108,7 @@
                 <br> 日本生まれマレーシア育ち。
                 <br> よく喋る。わりと気分で誰にでもタメ口。
                 <br> 関西圏でWEB系のフリーランスとして活動中。
+                <br> 波に漂う
             </p>
         </section>
 
@@ -119,13 +129,69 @@
             <dd>DiscordのBot。VCマイクミュート民のチャットを読み上げてくれるよくあるやつ</dd>
         </section>
     </main>
+    <canvas id="wave"></canvas>
     <script>
-        console.log("█████╗  ███╗   ██╗██╗  ██╗██╗  ██╗    ██████╗  █████╗ ██╗   ██╗██╗███████╗")
-        console.log("██╔══██╗████╗  ██║██║ ██╔╝██║  ██║    ██╔══██╗██╔══██╗██║   ██║██║██╔════╝")
-        console.log("███████║██╔██╗ ██║█████╔╝ ███████║    ██║  ██║███████║██║   ██║██║███████╗")
-        console.log("██╔══██║██║╚██╗██║██╔═██╗ ██╔══██║    ██║  ██║██╔══██║╚██╗ ██╔╝██║╚════██║")
-        console.log("██║  ██║██║ ╚████║██║  ██╗██║  ██║    ██████╔╝██║  ██║ ╚████╔╝ ██║███████║")
-        console.log("╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚═════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝╚══════╝")
+        console.log("█████╗  ███╗   ██╗██╗  ██╗██╗  ██╗    ██████╗  █████╗ ██╗   ██╗██╗███████╗");
+        console.log("██╔══██╗████╗  ██║██║ ██╔╝██║  ██║    ██╔══██╗██╔══██╗██║   ██║██║██╔════╝");
+        console.log("███████║██╔██╗ ██║█████╔╝ ███████║    ██║  ██║███████║██║   ██║██║███████╗");
+        console.log("██╔══██║██║╚██╗██║██╔═██╗ ██╔══██║    ██║  ██║██╔══██║╚██╗ ██╔╝██║╚════██║");
+        console.log("██║  ██║██║ ╚████║██║  ██╗██║  ██║    ██████╔╝██║  ██║ ╚████╔╝ ██║███████║");
+        console.log("╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚═════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝╚══════╝");
+
+        var unit = 100,
+            canvas, context, canvas2, context2,
+            height, width, xAxis, yAxis,
+            draw;
+
+        function init() {
+            canvas = document.getElementById("wave");
+            context = canvas.getContext("2d");
+
+            canvas.width = document.documentElement.clientWidth;
+            canvas.height = 300;
+
+            height = canvas.height;
+            width = canvas.width;
+
+            xAxis = Math.floor(height / 2);
+            yAxis = 0;
+
+            draw();
+        }
+
+        function draw() {
+            context.clearRect(0, 0, width, height);
+            drawWave('rgba(255,255,255,.1)', 1, 3, 0);
+            draw.seconds = draw.seconds + .009;
+            draw.t = draw.seconds * Math.PI;
+            setTimeout(draw, 35);
+        };
+        draw.seconds = 0;
+        draw.t = 0;
+
+        function drawWave(color, alpha, zoom, delay) {
+            context.fillStyle = color;
+            context.globalAlpha = alpha;
+            context.beginPath();
+            drawSine(draw.t / 0.5, zoom, delay);
+            context.lineTo(width + 10, height);
+            context.lineTo(0, height);
+            context.closePath();
+            context.fill();
+        }
+
+        function drawSine(t, zoom, delay) {
+            var x = t;
+            var y = Math.sin(x) / zoom;
+            context.moveTo(yAxis, unit * y + xAxis);
+            for (i = yAxis; i <= width + 10; i += 10) {
+                x = t + (-yAxis + i) / unit / zoom;
+                y = Math.sin(x - delay) / 3;
+                context.lineTo(i, unit * y + xAxis);
+            }
+        }
+
+        init();
     </script>
 </body>
 
