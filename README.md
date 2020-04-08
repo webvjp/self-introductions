@@ -8,7 +8,11 @@ git の操作に慣れていない人は discord チャンネル内の `#github-
 
 ### 1.
 
-まず、member.json を編集して、こんな風に自分の情報を追加してください。
+このリポジトリへの編集権を誰かにもらってください。discord 内で叫ぶか、管理人に言ってください。
+
+### 2.
+
+編集権をもらえたら、member.json を編集して、こんな風に自分の情報を追加してください。
 
 ```
 [
@@ -16,7 +20,7 @@ git の操作に慣れていない人は discord チャンネル内の `#github-
     "name": "ゆっけ",
     "since": "2020.3",
     "pageUrl": "members/yukke",
-    "imageUrl": "https://cdn.discordapp.com/avatars/432354940367929344/4dbfb64480269b56131f0f633953de08.png?size=256"
+    "imageUrl": "https://cdn.discordapp.com/avatars/432354940367929344/4dbfb64480269b56131f0f633953de08.png?size=128"
   },
   ...
 ]
@@ -24,7 +28,7 @@ git の操作に慣れていない人は discord チャンネル内の `#github-
 
 （pageUrl は絶対パスで自分のホームページなんかを指定してもいいよ！）
 
-### 2.
+### 3.
 
 `/members` 配下に自分用のフォルダか、html ファイルを一つ作ってそこにページを作成！  
  特にルールはないので、自分の好きな技術スタックで作ってね。
