@@ -1,0 +1,47 @@
+body {
+  background-color: lightyellow;
+}
+
+.header {
+  text-align: center;
+  line-height: 30px;
+  margin: 0px;
+}
+.main {
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+
+img.icon {
+  margin: 20px;
+}
+
+section p {
+  margin-left: 150px;
+  line-height: 2;
+}
+
+.details {
+  margin-top: 30px;
+}
+
+ul,
+ol {
+  padding: 0;
+  position: relative;
+}
+
+ul li,
+ol li {
+  color: black;
+  border-left: solid 8px orange; /*左側の線*/
+  margin-bottom: 5px; /*下のバーとの余白*/
+  line-height: 0.5;
+  margin-left: 100px;
+
+  border-radius: 0 15px 15px 0; /*右側の角だけ丸く*/
+  padding: 0.5em;
+  list-style-type: none !important;
+}
+
+/* https://saruwakakun.com/html-css/reference/ul-ol-li-design */
