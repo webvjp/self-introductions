@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada');
+   
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body{
+  font-size: 62.5%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.scene{
+  position: relative;
+  height: 100%;
+  background: linear-gradient(180deg, rgb(242, 242, 242), rgb(141, 141, 141)) fixed;
+  padding: 20rem;
+  text-align: center;
+  cursor: none;
+}
+
+img{
+  position: absolute; 
+  float: left;
+  z-index: 100;
+  left: 10%;
+  top: 20%; 
+  width: 80%;
+}
+
+p{
+  position: relative;
+  font-size: 8rem;
+  text-transform: uppercase;
+  color: #fff;
+  z-index: 10;
+  letter-spacing: 0.4rem;
+  top: 70%; 
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 10px;
+}
+
+.obake{
+  z-index: 5;
+  position: absolute;
+  top: calc(50% - 10rem);
+  left: calc(50% - 10rem);
+  width: 20rem;
+  height: 20rem;
+  background: url("../images/background.png") 50% 50% no-repeat fixed;
+  background-size: cover;
+  border-radius: 50%;
+}

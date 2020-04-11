@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaruruObake</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        $(document).ready(function() {
+            var $obake = $(".obake"),
+            obakeWHalf = $obake.width() / 2;
+            $(document).on("mousemove", function(e) {
+            $obake.css({"left": e.pageX - obakeWHalf, "top": e.pageY - obakeWHalf});
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="scene">
+        <img src="images/ZEBRA.png">
+        <!--<h3>お勉強中</h3>-->
+        <p>html css javascript</p>
+        <!--<h3>お仕事</h3>
+        <p>C#</p>-->
+        <div class="obake"></div>
+    </div>
+</body>
+</html>
