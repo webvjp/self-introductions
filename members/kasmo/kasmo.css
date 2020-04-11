@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+/* 共通 */
+
+header * {
+    color: white;
+    margin: 0 auto;
+}
+
+header {
+    background: rgb(255, 192, 96);
+    min-width: 800px;
+    font-size: 32pt;
+}
+
+#logo {
+    width: 800px;
+    font-size: 32pt;
+    text-align: center;
+}
+
+#menu {
+    width: 800px;
+    text-align: center;
+}
+
+article, td, th, div {
+    font-size: 18pt;
+}
+
+article {
+    padding: 20px;
+    min-height: 400px;
+    width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-blend-mode: lighten;
+    background-position: center center;
+}
+
+footer {
+    background: gray;
+    min-width: 800px;
+    height: 24px;
+    font-size: 12pt;
+    color: black;
+    text-align: center;
+}
+
+.tag {
+    width: 120px;
+    height: 32px;
+    background-position-y: 8px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.detail {
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+
+#name {
+    background-image: url("image/red.png");
+}
+
+#lang {
+    background-image: url("image/yellow.png");
+}
+
+#hobby {
+    background-image: url("image/green.png");
+}
+
+#contact {
+    background-image: url("image/cyan.png");
+}
