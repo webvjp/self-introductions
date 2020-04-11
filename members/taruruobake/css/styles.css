@@ -25,7 +25,7 @@ img{
   float: left;
   z-index: 100;
   left: 10%;
-  top: 20%; 
+  top: 18%; 
   width: 80%;
 }
 
@@ -50,7 +50,7 @@ p{
   left: calc(50% - 10rem);
   width: 20rem;
   height: 20rem;
-  background: url("../images/background.png") 50% 50% no-repeat fixed;
+  background: url("../images/background-hiyoko.png") 50% 50% no-repeat fixed;
   background-size: cover;
   border-radius: 50%;
 }
