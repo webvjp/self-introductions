@@ -1,0 +1,22 @@
+.content__title {
+    font: x-large bold;
+    font-style: italic;
+}
+
+.name_plate {
+    margin: 0;
+    padding: 0;
+    height: 128px;
+    border: solid;
+    background: rgba(0, 128, 255, 0.5);
+}
+
+.avatar__image {
+    float: left;
+    border-radius: 100px;
+}
+
+.description {
+    margin: 5px 0 0 0;
+}
+
