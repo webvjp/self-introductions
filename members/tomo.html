@@ -2,17 +2,376 @@
 <html lang="jp">
 
 <head>
+    <title>ともの自己紹介</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ともの自己紹介</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        .carousel,
+        .carousel .carousel-inner,
+        .carousel .carousel-inner .active,
+        .carousel .carousel-inner .carousel-item,
+        .view,
+        body,
+        html {
+            height: 100%;
+        }
+
+        .view-background {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#1D62F0, #465DAA) fixed;
+        }
+
+        .view .mask {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-attachment: fixed;
+        }
+
+        .white-text {
+            color: #fff !important;
+        }
+
+        .btn[class*="btn-outline-"].btn-lg {
+            padding-top: .88rem;
+            padding-bottom: .88rem;
+        }
+
+        .btn[class*="btn-outline-"] {
+            padding-top: .7rem;
+            padding-bottom: .7rem;
+        }
+
+        .btn.btn-lg {
+            padding: 1rem 2.4rem;
+            font-size: .94rem;
+        }
+
+        a.waves-effect,
+        a.waves-light {
+            display: inline-block;
+        }
+
+        .btn-outline-white {
+            color: #fff !important;
+            background-color: transparent !important;
+            border: 2px solid #fff !important;
+        }
+
+        .btn {
+            margin: .375rem;
+            color: inherit;
+            text-transform: uppercase;
+            word-wrap: break-word;
+            white-space: normal;
+            cursor: pointer;
+            border: 0;
+            border-radius: .125rem;
+            -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+            padding: .84rem 2.14rem;
+            font-size: .81rem;
+        }
+
+        .waves-effect {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .btn-group-lg>.btn,
+        .btn-lg {
+            padding: .5rem 1rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: .3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        .btn-box {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            cursor: auto;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+    </style>
+
 </head>
 
 <body>
-    <h1>ともの自己紹介ページです。 </h1>
-    <h2>ブログページ</h2>
-    <a href="https://bsf40.blogspot.com/">40代から始めるブログ</a>
-    <h2>作成中アプリ</h2>
-    <a href="https://rocky-sands-09243.herokuapp.com/mrrs/">会議室予約システム</a>
+
+    <nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar">
+        <div class="container"></div>
+    </nav>
+    <div class="carousel slide carousel-fade">
+        <div class="carousel-inner" role="listbox">
+
+            <div class="carousel-item active">
+                <div class="view">
+
+                    <!--Video source-->
+                    <div class="view-background">
+
+                        <!-- Mask & flexbox options-->
+                        <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+                            <!-- Content -->
+                            <div class="text-center white-text mx-5 wow fadeIn">
+                                <h1 class="mb-4"> <strong> ともの自己紹介 </strong> </h1>
+                                <h2 class="h4 mt-5 mb-5"> <strong>プロフィール</strong> </h2>
+                                <p class="mb-4 d-none d-md-block"> <strong>40代のITエンジニアです。エンジニア歴20数年です。</strong> </p>
+                                <p class="mb-4 d-none d-md-block">
+                                    <strong>通信系/業務系/工場系/金融系/ビル管理系/フロント系/バックエンド系のシステム構築の経験があります。ここ数年は、運用/保守でPHPがメインです。</strong>
+                                </p>
+                                <p class="mb-4 d-none d-md-block">
+                                    <strong>最近個人的にPythonのフレームワークをメインに勉強中です。</strong>
+                                </p>
+                                <h2 class="h4 mt-5 mb-5"> <strong>ブログ</strong> </h2>
+                                <p><a href="https://bsf40.blogspot.com/"
+                                        class="btn btn-outline-white btn-lg waves-effect waves-light">40代から始めるブログ</a>
+                                </p>
+
+                            </div>
+                            <!-- Content -->
+
+                        </div>
+                        <!-- Mask & flexbox options-->
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <main>
+        <div class="container">
+            <hr class="mb-5">
+            <section>
+                <h2 class="h2 text-center mb-5">作成アプリ</h2>
+                <div class="row wow fadeIn">
+                    <div class=" col-md-12 px-4">
+                        <h3 class="h3 mb-5"><a href="https://gentle-inlet-58154.herokuapp.com/mrrs/">会議室予約システム</a></h3>
+                        <p>Winodws環境に VatulaBox + Vagrantを使ってUbuntuのゲストOSをインストールをして開発環境を構築しました。</p>
+                        <p>そのUbuntuにDockerをインストールしてDockerでDjangoを動かしました。</p>
+                        <p>そのあとHerokuに公開しました。</p>
+                    </div>
+                </div>
+                <hr class="mb-5">
+                <div class="row wow fadeIn">
+                    <div class="col-lg-6 col-md-12 px-4">
+                        <h3 class="h3 mb-5"><a
+                                href="https://bsf40.blogspot.com/2020/02/python-voice.html">チャットボットで音声入力</a></h3>
+                        <p>JuliusとPythonを使って音声入力をします。</p>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/3gpnnpUl7W8"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-5">
+                <div class="row wow fadeIn">
+                    <div class="col-lg-6 col-md-12 px-4">
+                        <h3 class="h3 mb-5"><a
+                                href="https://bsf40.blogspot.com/2020/02/catbot-voice.html">チャットボットで音声出力</a></h3>
+                        <p>Open JTalkとPythonを使って音声出力をします。</p>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="embed-responsive embed-responsive-16by9">
+
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7Bno6GJKQl0"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-5">
+                <div class="row wow fadeIn">
+                    <div class="col-lg-6 col-md-12 px-4">
+                        <h3 class="h3 mb-5"><a
+                                href="https://bsf40.blogspot.com/2020/01/python-google-Trans.html">交通費精算書</a>
+                        </h3>
+                        <p>Google Calenderからエクスポートしたデータから交通費を抽出しスプレットシートに出力するプログラムをPythonで作ります。</p>
+                        <div class="col-lg-6 col-md-12">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr class="mb-5">
+        </div>
+    </main>
+    <div class="carousel slide carousel-fade">
+        <div class="carousel-inner" role="listbox">
+
+            <div class="carousel-item active">
+                <div class="view">
+
+                    <!--Video source-->
+                    <div class="view-background">
+
+                        <!-- Mask & flexbox options-->
+                        <div class="rgba-black-light d-flex justify-content-center align-items-center">
+                            <div class="container">
+                                <!-- Content -->
+                                <div class="white-text mx-5 mt-5 wow fadeIn">
+                                    <h2 class="text-center mb-4"> <strong> スキル</strong> </h2>
+                                    <div class="row wow fadeIn">
+
+                                        <div class="row fadeIn">
+                                            <div class="col-md-12 px-4 mb-4">
+                                                <h3 class="feature-title mb-4">langage(front-end)</h3>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    HTML
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    JavaScript(JQuery)
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    Coldfusion
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    Intra-mart
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 px-4 mb-4">
+                                                <h3 class="feature-title mb-4">langage(back-end)</h3>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    Java(TERASOLUNA/WebSphere/Seasar2)
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    php(smarty/phalcon)
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    Python(Django/Flask[勉強中])
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 px-4 mb-4">
+                                                <h3 class="feature-title mb-4">langage(other)</h3>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    Citect
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    Visual Basic
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    Perl
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 px-4 mb-4">
+                                                <h3 class="feature-title mb-4">DataBase</h3>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    Oracle(SQL/PLSQL)
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    PostgreSQL
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    DB2
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    SQLite3
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 px-4 mb-4">
+                                                <h3 class="feature-title mb-4">ミドルウェア</h3>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    NginX
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    varnish
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    apache
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    Tomcat
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 px-4 mb-4">
+                                                <h3 class="feature-title mb-4">工程</h3>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    要件定義/概要設計/詳細設計
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    実装/単体テスト/結合テスト/総合テスト
+                                                </div>
+                                                <div class="btn-box btn-outline-white btn-lg waves-effect waves-light">
+                                                    運用/保守
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 px-4 mb-4">
+                                                ※このページはBootstrapを使用しました。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- Mask & flexbox options-->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+
 </body>
 
 </html>
