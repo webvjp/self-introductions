@@ -2,154 +2,234 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex" />
-    <meta name="description" content="「まったり個人Web開発」という Discord サーバーのメンバーによる自己紹介ページです。みんなで自由に作ってます\( •̀ω•́ )/" />
-    <meta name="theme-color" content="#216dca" />
-    <title>DISCORD まったり個人Web開発 自己紹介ページ</title>
-    <link rel="icon" href="assets/icons/favicon.ico" />
-    <link rel="apple-touch-icon" href="assets/icons/icon-180x180.png" />
-    <link rel="stylesheet" href="assets/css/normalize.min.css" />
-    <link rel="preload" as="font" href="assets/fonts/m-plus-1p-v19-japanese-regular.woff2" crossorigin />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="「まったり個人Web開発」という Discord サーバーのメンバーによる自己紹介ページです。みんなで自由に作ってます\( •̀ω•́ )/" />
+  <meta name="theme-color" content="#216dca" />
+  <title>DISCORD まったり個人Web開発 自己紹介ページ</title>
+  <link rel="icon" href="assets/icons/favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-180x180.png" />
+  <link rel="stylesheet" href="assets/css/normalize.min.css" />
+  <link rel="preload" as="font" href="assets/fonts/m-plus-1p-v19-japanese-regular.woff2" crossorigin />
 
-    <style>
-        :root {
-            --main-bg-color: #ebf5fc;
-            --main-color: #216dca;
-            --neumorphism: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1)
-        }
+  <style>
+    :root {
+      --main-bg-color: #ebf5fc;
+      --main-color: #216dca;
+      --neumorphism: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+    }
 
-        @font-face {
-            font-family: "M PLUS 1p";
-            font-style: normal;
-            font-weight: 400;
-            src: local("M PLUS 1p"), local("MPLUS1p-Regular"), url("assets/fonts/m-plus-1p-v19-japanese-regular.woff2") format("woff2");
-            font-display: swap;
-        }
+    @font-face {
+      font-family: 'M PLUS 1p';
+      font-style: normal;
+      font-weight: 400;
+      src: local('M PLUS 1p'), local('MPLUS1p-Regular'),
+        url('assets/fonts/m-plus-1p-v19-japanese-regular.woff2') format('woff2');
+      font-display: swap;
+    }
 
-        body {
-            margin: 40px 20px;
-            background: var(--main-bg-color);
-            color: var(--main-color);
-            font-family: "M PLUS 1p", "Osaka", Arial, sans-serif;
-        }
+    body {
+      margin: 20px;
+      background: var(--main-bg-color);
+      color: var(--main-color);
+      font-family: 'M PLUS 1p', 'Osaka', Arial, sans-serif;
+    }
 
-        @media screen and (min-width:768px) {
-            body {
-                margin: 0 20px 0 100px;
-                display: grid;
-                grid-template-columns: 260px 1fr;
-            }
+    @media screen and (min-width: 768px) {
+      body {
+        margin: 0 0 0 100px;
+        display: grid;
+        grid-template-columns: 260px 1fr;
+      }
 
-            header {
-                margin: 100px 0;
-            }
-        }
+      header {
+        margin: 100px 0;
+      }
+    }
 
-        header h1>span {
-            white-space: nowrap;
-        }
+    header h1>span {
+      white-space: nowrap;
+    }
 
-        p.copyright {
-            color: var(--main-color);
-            font-size: 0.9em;
-        }
+    ul.links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
 
-        ul.members {
-            margin: auto;
-            padding: 0;
-        }
+    ul.links li {
+      margin: 0 8px;
+      height: 28px;
+    }
 
-        ul.members>li {
-            margin: 20px auto;
-            list-style: none;
-            justify-content: center;
-            border-radius: 10px;
-            padding: 30px;
-            width: 240px;
-            box-shadow: var(--neumorphism);
-        }
+    ul.links svg {
+      height: 28px;
+      width: 28px;
+      color: var(--main-color);
+    }
 
-        @media screen and (min-width:768px) {
-            ul.members {
-                display: flex;
-                flex-wrap: wrap;
-            }
+    p.copyright {
+      color: var(--main-color);
+      font-size: 0.9em;
+    }
 
-            ul.members>li {
-                display: flex;
-                margin: 20px;
-            }
-        }
+    ul.members {
+      margin: auto;
+      padding: 0;
+    }
 
-        div.member-box {
-            text-align: center;
-        }
+    ul.members>li {
+      margin: 20px auto;
+      list-style: none;
+      justify-content: center;
+      border-radius: 10px;
+      padding: 16px;
+      width: 300px;
+      box-shadow: var(--neumorphism);
+    }
 
-        div.member-box img.avator {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-        }
+    @media screen and (min-width: 768px) {
+      ul.members {
+        display: flex;
+        flex-wrap: wrap;
+      }
 
-        div.member-box button.go-to-page {
-            border-width: 0;
-            width: 60px;
-            height: 60px;
-            background: var(--main-bg-color);
-            box-shadow: var(--neumorphism);
-            border-radius: 10px;
-            color: var(--main-color);
-        }
+      ul.members>li {
+        margin: 12px 16px;
+      }
+    }
 
-        div.member-box button.go-to-page>svg {
-            width: 20px;
-            height: 20px;
-            vertical-align: middle;
-        }
-    </style>
+    div.member-box {
+      display: flex;
+    }
+
+    div.member-box img.avator {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    div.member-box div.details {
+      flex: 1;
+      margin: 0 0 0 20px;
+    }
+
+    div.member-box div.details h2 {
+      width: 100%;
+      margin: 8px 0;
+      font-size: 1.1em;
+    }
+
+    div.member-box div.details p.since {
+      font-size: 0.8em;
+      margin: 10px 0;
+    }
+
+    div.member-box button.go-to-page {
+      border-width: 0;
+      width: 40px;
+      height: 40px;
+      margin: 10px 0;
+      vertical-align: middle;
+      background: var(--main-bg-color);
+      box-shadow: var(--neumorphism);
+      border-radius: 10px;
+      color: var(--main-color);
+    }
+
+    div.member-box button.go-to-page>svg {
+      flex: 1;
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <h1><span>DISCORD</span> <span>まったり個人</span><span>Web開発</span> <span>自己紹介ページ</span></h1>
-        <p class="copyright">©2020 各ページを作成したみんな</p>
-    </header>
-    <main>
-        <ul class="members" id="members"></ul>
-    </main>
+  <header>
+    <h1>
+      <span>DISCORD</span> <span>まったり個人</span><span>Web開発</span>
+      <span>自己紹介ページ</span>
+    </h1>
+    <ul class="links">
+      <li>
+        <a href="https://github.com/webvjp/self-introductions"><svg data-icon="github"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="currentColor"
+              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+            </path>
+          </svg></a>
+      </li>
+      <li>
+        <a href="https://www.notion.so/webv"><svg data-icon="notion" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 48 48">
+            <path
+              d="M24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48Z"
+              fill="white" />
+            <path
+              d="M28.4602 9.06842L11.8104 10.2936C10.4679 10.4098 10 11.285 10 12.3342V30.5316C10 31.3492 10.2916 32.048 10.993 32.982L14.9069 38.0563C15.5498 38.8734 16.134 39.0482 17.3616 38.9897L36.6969 37.823C38.3322 37.7069 38.8 36.9481 38.8 35.665V15.1925C38.8 14.5292 38.5374 14.3376 37.7632 13.7728C37.7206 13.7418 37.6764 13.7096 37.6307 13.6761L32.3159 9.94338C31.0308 9.01056 30.5048 8.89318 28.4602 9.06842ZM17.8 14.8567C16.2214 14.9632 15.8627 14.9874 14.9662 14.2596L12.6865 12.4516C12.454 12.2178 12.5706 11.9262 13.1544 11.8683L29.1613 10.7017C30.5045 10.5848 31.2054 11.0522 31.7314 11.4602L34.4769 13.4435C34.5938 13.5016 34.8854 13.8511 34.5347 13.8511L18.0038 14.843L17.8 14.8567ZM15.9587 35.4897V18.1093C15.9587 17.3512 16.1924 17.001 16.893 16.9421L35.8782 15.8343C36.5222 15.776 36.8138 16.1846 36.8138 16.9421V34.206C36.8138 34.9648 36.6966 35.6072 35.6447 35.665L17.4773 36.7155C16.4259 36.7733 15.9587 36.4238 15.9587 35.4897ZM33.8936 19.0416C34.0101 19.5671 33.8936 20.092 33.3668 20.1511L32.4914 20.3254V33.1567C31.7314 33.5649 31.0306 33.7983 30.4466 33.7983C29.5116 33.7983 29.2774 33.5064 28.5771 32.632L22.8513 23.65V32.3404L24.6631 32.7489C24.6631 32.7489 24.6631 33.7983 23.2014 33.7983L19.1716 34.0319C19.0545 33.7983 19.1716 33.2155 19.5803 33.0987L20.6319 32.8075V21.3172L19.1718 21.2003C19.0547 20.6749 19.3463 19.9173 20.1648 19.8585L24.4879 19.5673L30.4466 28.6662V20.617L28.9274 20.4428C28.8107 19.8004 29.2774 19.334 29.8617 19.2761L33.8936 19.0416Z"
+              fill="currentColor" />
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://discord.gg/VjBtsUj"><svg data-icon="discord" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 48 48">
+            <path fill="currentColor"
+              d="M42,45l-9-7.001L34,41H10c-2.761,0-5-2.238-5-5V10c0-2.762,2.239-5,5-5h27c2.762,0,5,2.238,5,5V45z" />
+            <path fill="#fff"
+              d="M32.59,16.24c0,0-2.6-2.01-5.68-2.24l-0.27,0.55c2.78,0.67,4.05,1.64,5.38,2.83 C29.73,16.21,27.46,15,23.5,15s-6.23,1.21-8.52,2.38c1.33-1.19,2.85-2.27,5.38-2.83L20.09,14c-3.23,0.31-5.68,2.24-5.68,2.24 S11.5,20.43,11,28.62c2.94,3.36,7.39,3.38,7.39,3.38l0.92-1.23c-1.57-0.54-3.36-1.51-4.9-3.27c1.84,1.38,4.61,2.5,9.09,2.5 s7.25-1.12,9.09-2.5c-1.54,1.76-3.33,2.73-4.9,3.27L28.61,32c0,0,4.45-0.02,7.39-3.38C35.5,20.43,32.59,16.24,32.59,16.24z M20,27 c-1.1,0-2-1.12-2-2.5s0.9-2.5,2-2.5s2,1.12,2,2.5S21.1,27,20,27z M27,27c-1.1,0-2-1.12-2-2.5s0.9-2.5,2-2.5s2,1.12,2,2.5 S28.1,27,27,27z" />
+          </svg></a>
+      </li>
+    </ul>
+    <p class="copyright">©2020 各ページを作成したみんな</p>
+  </header>
+  <main>
+    <ul class="members" id="members"></ul>
+  </main>
 
-    <script>
-        const memberTemplate = memberInfo => `
+  <script>
+    const memberTemplate = (memberInfo) => `
         <div class="member-box">
-            <img class="avator" src="${memberInfo.imageUrl}" alt="${memberInfo.name}" />
+          <img class="avator" src="${memberInfo.imageUrl}" alt="${memberInfo.name}" />
+          <div class="details">
             <h2>${memberInfo.name}</h2>
-            <p>since ${memberInfo.since}</p>
-            <a href="${memberInfo.pageUrl}" target="_blank" rel="noopener">
-                <button class="go-to-page" aria-label="go-to-page">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right"
-                        class="svg-inline--fa fa-arrow-right fa-w-14" role="img"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path fill="currentColor"
-                            d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z">
-                        </path>
-                    </svg>
-                </button>
-            </a>
+            <p class="since">since ${memberInfo.since}</p>
+          </div>
+          <a href="${memberInfo.pageUrl}" target="_blank" rel="noopener">
+            <button class="go-to-page" aria-label="go-to-page">
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right"
+                class="svg-inline--fa fa-arrow-right fa-w-14" role="img"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path fill="currentColor"
+                    d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z">
+                </path>
+              </svg>
+            </button>
+          </a>
         </div>`
-        const shuffle = ([...arr]) => { let m = arr.length; while (m) { const i = Math.floor(Math.random() * m--);[arr[m], arr[i]] = [arr[i], arr[m]]; } return arr; };
-        const members = document.getElementById('members')
-        fetch('members.json')
-            .then((response) => response.json())
-            .then((json) => {
-                shuffle(json).forEach(memberInfo => {
-                    const memberEl = document.createElement('li')
-                    memberEl.innerHTML = memberTemplate(memberInfo)
-                    members.appendChild(memberEl)
-                });
-            })
-    </script>
+    const shuffle = ([...arr]) => {
+      let m = arr.length
+      while (m) {
+        const i = Math.floor(Math.random() * m--)
+          ;[arr[m], arr[i]] = [arr[i], arr[m]]
+      }
+      return arr
+    }
+    const members = document.getElementById('members')
+    fetch('members.json')
+      .then((response) => response.json())
+      .then((json) => {
+        shuffle(json).forEach((memberInfo) => {
+          const memberEl = document.createElement('li')
+          memberEl.innerHTML = memberTemplate(memberInfo)
+          members.appendChild(memberEl)
+        })
+      })
+  </script>
 </body>
 
 </html>
