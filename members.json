@@ -65,9 +65,10 @@
     "pageUrl": "members/perura",
     "imageUrl": "https://cdn.discordapp.com/avatars/237254415025700865/868082f8517fdb8df19f102362959a1f.png?size=256"
   },
-  {"name": "SHINNO",
-   "since": "2020.4",
-   "pageUrl": "members/shinno",
-   "imageUrl": "#"
-  } 
+  {
+    "name": "SHINNO",
+    "since": "2020.4",
+    "pageUrl": "members/shinno",
+    "imageUrl": "https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png"
+  }
 ]
