@@ -1,77 +1,219 @@
 @charset "UTF-8";
 
 /* 共通 */
-
-header * {
-    color: white;
-    margin: 0 auto;
+@keyframes link {
+    0% { color: inherit; }
+    50% { color: rgb(238, 128, 128); }
+    100% { color: rgb(217, 31, 81); }
 }
 
-header {
-    background: rgb(255, 192, 96);
-    min-width: 800px;
-    font-size: 32pt;
+@keyframes fade_x {
+    0% {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(100px);
+    }
 }
 
-#logo {
-    width: 800px;
-    font-size: 32pt;
-    text-align: center;
+.fade_x {
+    opacity: 0;
+    transform: translateX(0px);
 }
 
-#menu {
-    width: 800px;
-    text-align: center;
+.fade_x.view_x {
+    animation: fade_x 1s ease-out forwards;
+}
+
+* {
+    font-family: 'Kiwi Maru', serif;
+}
+
+body {
+    position: relative;
+    background:rgb(255, 224, 192);
 }
 
 article, td, th, div {
-    font-size: 18pt;
+    font-size: 24px;
+}
+
+div#header {
+    position: relative;
+    background: rgb(255, 192, 96);
+    width: 100%;
+    min-width: 1200px;
+    height: 1000px;
+    color: rgb(255, 248, 241);
+}
+
+div#header div.menu {
+    position: absolute;
+    width: inherit;
+    height: 120px;
+    margin-top: 540px;
+    text-align: center;
+}
+
+div#header_fix {
+    position: fixed;
+    top: 0px;
+    background: rgb(255, 192, 96);
+    width: 100%;
+    min-width: 1200px;
+    height: 52px;
+    color: rgb(255, 248, 241);
+    z-index: 80;
+}
+
+div#header div.menu {
+    position: absolute;
+    width: inherit;
+    text-align: center;
+    font-size: 32px;
+}
+
+div#header_fix div.menu {
+    position: absolute;
+    width: inherit;
+    text-align: center;
+    font-size: 32px;
+}
+
+div#header div.logo {
+    position: absolute;
+    width: inherit;
+    height: 200px;
+    margin-top: 200px;
+    font-size: 64px;
+    text-align: center;
+}
+
+div#header_fix div.logo {
+    position: absolute;
+    width: 400px;
+    /* height: 200px; */
+    margin-left: 0px;
+    margin-top: 0px;
+    font-size: 32px;
+    text-align: center;
+}
+
+a:link {
+    color: inherit;
+    text-decoration: none;
+    transition: 0.5s
+}
+
+a:visited {
+    color: inherit;
+    text-decoration: none;
+    transition: 0.5s
+}
+
+a:active {
+    color: inherit;
+    text-decoration: none;
+    transition: 0.5s
+}
+
+a:hover {
+    color: rgb(217, 88, 100);
+    text-decoration: none;
+    transition: 0.6s;
+    font-weight: bold;
 }
 
 article {
     padding: 20px;
     min-height: 400px;
-    width: 800px;
+    width: 960px;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgb(255, 248, 241);
     background-blend-mode: lighten;
     background-position: center center;
+    color: rgb(30, 10, 0);
 }
 
-footer {
-    background: gray;
-    min-width: 800px;
-    height: 24px;
-    font-size: 12pt;
-    color: black;
+div#footer {
+    position: relative;
+    background: rgb(145, 119, 41);
+    width: 100%;
+    min-width: 1200px;
+    height: 100px;
+    color: rgb(255, 248, 241);
     text-align: center;
-}
-
-.tag {
-    width: 120px;
-    height: 32px;
-    background-position-y: 8px;
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 .detail {
     margin-left: 80px;
     margin-bottom: 20px;
+    font-size: 24px;
 }
 
-#name {
+.tag {
+    width: 400px;
+    height: 32px;
+    font-size: 32px;
+    background-repeat: no-repeat;
+    background-position-y: 8px;
+    background-size: contain;
+    margin-bottom: 48px;
+}
+
+ul.image_list {
+    list-style: none;
+    display: flex;
+}
+
+ul.image_list > li {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+div.content {
+    padding-top: 100px;
+}
+
+div#about {
+    height: 600px;
+}
+
+div#lang {
+    height: 600px;
+}
+
+div#hobby {
+    height: 1000px;
+}
+
+div#old {
+    height: 200px;
+}
+
+div#contact {
+    height: 400px;
+}
+
+div#about > div.tag {
     background-image: url("image/red.png");
 }
 
-#lang {
+div#lang > div.tag {
     background-image: url("image/yellow.png");
 }
 
-#hobby {
+div#hobby > div.tag {
     background-image: url("image/green.png");
 }
 
-#contact {
+div#old > div.tag {
+    background-image: url("image/gray.png");
+}
+
+div#contact > div.tag {
     background-image: url("image/cyan.png");
 }

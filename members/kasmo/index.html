@@ -1,72 +1,200 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&display=swap" rel="stylesheet">
+
+    <!-- reset.css ress -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
     <link rel="stylesheet" type="text/css" href="kasmo.css">
-    <title>Kasmo</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+        $(function() {
+            $(window).scroll(function () {
+                var scrollTop = $(this).scrollTop();
+                header_setting(scrollTop);
+                fade_effect(scrollTop);
+            });
+
+            function init() {
+                var scrollTop = $(window).scrollTop();
+                header_setting(scrollTop);
+                fade_effect(scrollTop);
+            }
+
+            function header_setting(scrollTop) {
+                if (scrollTop > 540) {
+                    $("#header_fix").show();
+                } else {
+                    $("#header_fix").hide();
+                }
+            }
+
+            function fade_effect(scrollTop) {
+                var height = $(window).height() - 300;
+                $(".fade_x").each(function () {
+                    var elemTop = $(this).offset().top;
+                    if (scrollTop > elemTop - height) {
+                        $(this).addClass("view_x");
+                    }
+                });
+            }
+
+            init();
+        });
+    </script>
+
+    <title>かすも ～ kasmo ～</title>
 </head>
 <body>
-    <header>
-        <div id='logo'>
-            かすも
-        </div>
-        <div id='menu'>
-        </div>
-    </header>
-    <article>
-        <div id='name' class='tag'>名前</div>
-        <div class='detail'>
-            <table>
-                <tr>
-                    <td rowspan="2">
-                        <image src='image/kasmo.png' alt='ラン' width='80px'/>
-                    </td>
-                    <td>
-                        かすも　と呼んでください。
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
-        <div id='lang' class='tag'>使用言語</div>
-        <div class='detail'>
-            C, C++, Java <br>
-            JavaScript, PHP, VBA, SQL
-        </div>
-        <div id='hobby' class='tag'>趣味</div>
-        <div class='detail'>
-            <table>
-                <tr>
-                    <td rowspan="2">
-                        <image src='image/ran.jpg' alt='ラン' width='80px'/>
-                    </td>
-                    <td>
-                        我が家のワンコが好きです。
-                    </td>
-                </tr>
-                <tr>
-                    <td>ラン（♀）です。</td>
-                </tr>
-                <tr>
-                    <td rowspan="2">
-                        <image src='image/mario.jpg' alt='ラン' width='80px'/>
-                    </td>
-                    <td>
-                        スーパーマリオカートでよく遊びます。
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
-        <div id='contact' class='tag'>連絡先</div>
-        <div class='detail'>
-            <a href='https://twitter.com/cassy_bot'>
-                <image src='image/twitter_logo.png' alt='かすも' width='32px'/>
+    <div id="header">
+        <div class="logo">
+            <a href="./index.html">
+                かすも<br>
+                ～ kasmo ～
             </a>
         </div>
+        <div class="menu">
+            <a href="#about">
+                <span>&nbsp;About&nbsp;</span>
+            </a>
+            <a href="#lang">
+                <span>&nbsp;Language&nbsp;</span>
+            </a>
+            <a href="#hobby">
+                <span>&nbsp;Hobby&nbsp;</span>
+            </a>
+            <a href="#old">
+                <span>&nbsp;Old&nbsp;</span>
+            </a>
+            <a href="#contact">
+                <span>&nbsp;Contact&nbsp;</span>
+            </a>
+        </div>
+    </div>
+    <div id="header_fix">
+        <div class="menu">
+            <a href="#about">
+                <span>&nbsp;About&nbsp;</span>
+            </a>
+            <a href="#lang">
+                <span>&nbsp;Language&nbsp;</span>
+            </a>
+            <a href="#hobby">
+                <span>&nbsp;Hobby&nbsp;</span>
+            </a>
+            <a href="#old">
+                <span>&nbsp;Old&nbsp;</span>
+            </a>
+            <a href="#contact">
+                <span>&nbsp;Contact&nbsp;</span>
+            </a>
+        </div>
+        <div class="logo">
+            <a href="./index.html">
+                かすも ～ kasmo ～
+            </a>
+        </div>
+    </div>
+    <article>
+        <div id="about" class="content fade_x">
+            <div class="tag">About: かすもについて</div>
+            <div class="detail">
+                <div class="image">
+                    <image src="image/kasmo.png" alt="ラン" width="200px"/>
+                </div>
+                <div class="text">
+                    <p>
+                        " かすも " と呼んでください。
+                    </p><br>
+                    <p>
+                        Webや組み込みなどのシステムエンジニアやってました。<br>
+                        今はセキュリティエンジニアをやっています。
+                    </p>
+                    <p>
+                        犬が好き、ゲームが好きです。
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="lang" class="content fade_x">
+            <div class="tag">Language: 使用言語</div>
+            <div class="detail">
+                <div class="image">
+                    <image src="image/pgicon.png" alt="プログラマ" width="200px"/>
+                </div>
+                <p>
+                    C, C++, Java <br>
+                    JavaScript, PHP, Python, VBA, SQL
+                </p>
+            </div>
+        </div>
+        
+        <div id="hobby" class="content fade_x">
+            <div class="tag">Hobby: 趣味</div>
+            <div class="detail">
+                <div class="image">
+                    <image src="image/ran.jpg" alt="ラン" width="200px"/>
+                </div>
+                <p>
+                    我が家のワンコが好きです。<br>
+                    名前はラン（♀）です。
+                </p>
+                <br>
+                <div class="image">
+                    <image src="image/mario.jpg" alt="マリカー" width="200px"/>
+                </div>
+                <p>
+                    スーパーマリオカートが好きです。<br>
+                    よく遊びます。
+                </p>
+            </div>
+        </div>
+
+        <div id="old" class="content fade_x">
+            <div class="tag">Old: 過去のファイル</div>
+            <div class="detail">
+                <a href="./2020/index.html">
+                    <span>2020.html</span>
+                </a>
+            </div>
+        </div>
+
+        <div id="contact" class="content fade_x">
+            <div class="tag">Contact: 連絡先</div>
+            <div class="detail">
+                <p>
+                    気軽に絡んでください。
+                </p>
+                <br>
+                <ul class="image_list">
+                    <li>
+                        <div class="image">
+                            <a href="https://twitter.com/superkasmokart">
+                                <image src="image/twitter_logo.png" alt="twitter" width="100px"/>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="image">
+                            <a href="https://www.twitch.tv/kasmonmon">
+                                <image src="image/twitch_logo.png" alt="twitch" width="100px"/>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
     </article>
+    <div id="footer">
+        © 2022 kasmo
+    </div>
 </body>
 </html>
